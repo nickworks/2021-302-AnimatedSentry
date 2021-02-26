@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3508356100617640798
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3892784018965200371}
+  m_Layer: 0
+  m_Name: BONE - Left hand
+  m_TagString: Untagged
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3892784018965200371
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3508356100617640798}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.0542, y: -0.0112, z: 0.599}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3989662335284178022}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3989662333278821806
 GameObject:
   m_ObjectHideFlags: 0
@@ -787,6 +817,7 @@ GameObject:
   - component: {fileID: 3989662334835398162}
   - component: {fileID: 4621910254132478728}
   - component: {fileID: 3408757127641273678}
+  - component: {fileID: 5810765006248007478}
   m_Layer: 0
   m_Name: The Player
   m_TagString: Untagged
@@ -845,8 +876,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   wantsToTarget: 0
+  wantsToAttack: 0
   visionDistance: 10
   visionAngle: 45
+  roundsPerSecond: 10
+  armL: {fileID: 3989662335284178022}
+  armR: {fileID: 3989662333660924359}
+  prefabMuzzleFlash: {fileID: 7938974155086580511, guid: 9b493530386dd8f4f884e0a647eafb59, type: 3}
+  handR: {fileID: 0}
+  handL: {fileID: 3892784018965200371}
 --- !u!114 &3408757127641273678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -862,6 +900,21 @@ MonoBehaviour:
   walkSpeed: 5
   leg1: {fileID: 3989662333543373080}
   leg2: {fileID: 3989662334744516074}
+  gravityMultiplier: 10
+  jumpImpulse: 5
+--- !u!114 &5810765006248007478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3989662334835398157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3e6ceab4b1f9ea44b3e57e09a02394c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthMax: 100
 --- !u!1 &3989662335074130548
 GameObject:
   m_ObjectHideFlags: 0
@@ -1216,6 +1269,7 @@ Transform:
   m_Children:
   - {fileID: 3989662333566541699}
   - {fileID: 3989662333485865055}
+  - {fileID: 3892784018965200371}
   m_Father: {fileID: 3989662333842440816}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
